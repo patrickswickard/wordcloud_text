@@ -1,5 +1,6 @@
 """generate word cloud from words in file"""
-
+import re
+import requests
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 #import json
@@ -9,6 +10,12 @@ import matplotlib.pyplot as plt
 #FILE = 'fannyhill.txt'
 FILE = 'mobydick.txt'
 FILE = 'rabelais.txt'
+URL = 'https://www.gutenberg.org/ebooks/1260.txt.utf-8'
+
+def get_text_from_pg(url):
+  """Get text from project gutenberg"""
+  result = requests.get(url).text
+  return result
 
 def enhance_stopwords_french(stopwords):
   """enhance french stopwords"""
@@ -93,12 +100,13 @@ def enhance_stopwords(stopwords):
   stopwords.add('jesu')
   return stopwords
 
-def generate_word_cloud_from_file(thisfile):
+def generate_word_cloud_from_text(text):
   """generate word cloud from words in file"""
-  with open(thisfile,'r',encoding='utf-8') as myinfile:
-    text = myinfile.read()
+#  with open(thisfile,'r',encoding='utf-8') as myinfile:
+#    text = myinfile.read()
   print(text)
-
+  branch = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
+  print(branch[0])
   tokens = text.lower().split()
 
   caption_words = ""
@@ -120,4 +128,5 @@ def generate_word_cloud_from_file(thisfile):
   # this is necessary without jupyter
   plt.show()
 
-generate_word_cloud_from_file(FILE)
+FILE = get_text_from_pg(URL)
+generate_word_cloud_from_text(FILE)
