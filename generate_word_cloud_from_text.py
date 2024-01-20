@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 #FILE = 'tender_buttons_full.txt'
 #FILE = 'fannyhill.txt'
 FILE = 'mobydick.txt'
+FILE = 'rabelais.txt'
 
 def enhance_stopwords_french(stopwords):
   """enhance french stopwords"""
@@ -31,6 +32,9 @@ def enhance_stopwords(stopwords):
   stopwords.add('eight`')
   stopwords.add('nine')
   stopwords.add('ten')
+  stopwords.add('go')
+  stopwords.add('give')
+  stopwords.add('gave')
   stopwords.add('must')
   stopwords.add('may')
   stopwords.add('might')
