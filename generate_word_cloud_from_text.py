@@ -14,7 +14,7 @@ print(text)
 tokens = text.lower().split()
 
 caption_words = ""
-caption_words += " ".join(tokens)+" "
+caption_words += " ".join(tokens) + " "
 
 stopwords = set(STOPWORDS)
 
