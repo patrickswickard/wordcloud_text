@@ -6,28 +6,32 @@ import matplotlib.pyplot as plt
 #import pandas as pd
 
 FILE = 'tender_buttons_full.txt'
-with open(FILE,'r',encoding='utf-8') as fd:
-  text = fd.read()
 
-print(text)
+def generate_word_cloud_from_file(thisfile):
+  """generate word cloud from words in file"""
+  with open(thisfile,'r',encoding='utf-8') as myinfile:
+    text = myinfile.read()
+  print(text)
 
-tokens = text.lower().split()
+  tokens = text.lower().split()
 
-caption_words = ""
-caption_words += " ".join(tokens) + " "
+  caption_words = ""
+  caption_words += " ".join(tokens) + " "
 
-stopwords = set(STOPWORDS)
+  stopwords = set(STOPWORDS)
 
-wordcloud = WordCloud(width = 800, height = 800,
-                background_color ='white',
-                stopwords = stopwords,
-                min_font_size = 10).generate(caption_words)
+  wordcloud = WordCloud(width = 800, height = 800,
+                  background_color ='white',
+                  stopwords = stopwords,
+                  min_font_size = 10).generate(caption_words)
 
-# plot the WordCloud image
-plt.figure(figsize = (8, 8), facecolor = None)
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.tight_layout(pad = 0)
+  # plot the WordCloud image
+  plt.figure(figsize = (8, 8), facecolor = None)
+  plt.imshow(wordcloud)
+  plt.axis("off")
+  plt.tight_layout(pad = 0)
 
-# this is necessary without jupyter
-plt.show()
+  # this is necessary without jupyter
+  plt.show()
+
+generate_word_cloud_from_file(FILE)
