@@ -1,20 +1,17 @@
-import json
+"""generate word cloud from words in file"""
+
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
-import pandas as pd
+#import json
+#import pandas as pd
 
-# this data is available here for further exploration if desired, e.g. below lists all display urls for all posts
-
-file = 'tender_buttons_full.txt'
-with open(file) as fd:
+FILE = 'tender_buttons_full.txt'
+with open(FILE,'r',encoding='utf-8') as fd:
   text = fd.read()
 
 print(text)
 
-tokens = text.split()
-
-for i in range(len(tokens)):
-  tokens[i] = tokens[i].lower()
+tokens = text.lower().split()
 
 caption_words = ""
 caption_words += " ".join(tokens)+" "
@@ -26,7 +23,7 @@ wordcloud = WordCloud(width = 800, height = 800,
                 stopwords = stopwords,
                 min_font_size = 10).generate(caption_words)
 
-# plot the WordCloud image                       
+# plot the WordCloud image
 plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud)
 plt.axis("off")
