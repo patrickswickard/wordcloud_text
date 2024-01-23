@@ -3,6 +3,7 @@ import re
 import requests
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
+from spacy.lang.fr.stop_words import STOP_WORDS as fr_stop
 #import json
 #import pandas as pd
 
@@ -24,8 +25,33 @@ def enhance_stopwords_french(stopwords):
   stopwords.add('c\'est')
   stopwords.add('d\'un')
   stopwords.add('d\'une')
+  stopwords.add('qu\'il')
+  stopwords.add('qu\'on')
   stopwords.add('qu\'un')
   stopwords.add('j\'un')
+  stopwords.add('n\'en')
+  stopwords.add('n\'est')
+  stopwords.add('non')
+  stopwords.add('bien')
+  stopwords.add('bon')
+  stopwords.add('été')
+  stopwords.add('qu\'elle')
+  stopwords.add('qu\'ils')
+  stopwords.add('qu\'elles')
+  stopwords.add('j\'ai')
+  stopwords.add('j\'avais')
+  stopwords.add('s\'en')
+  stopwords.add('faut')
+  stopwords.add('fut')
+  stopwords.add('l\'on')
+  stopwords.add('l\'un')
+  stopwords.add('l\'une')
+  stopwords.add('n\'a')
+  stopwords.add('faire')
+  stopwords.add('fait')
+  stopwords.add('jamais')
+  stopwords.add('c\'était')
+  stopwords.add('s\'il')
   return stopwords
 
 def enhance_stopwords(stopwords):
@@ -116,6 +142,12 @@ def enhance_stopwords(stopwords):
   stopwords.add('x')
   stopwords.add('y')
   stopwords.add('z')
+  stopwords.add('isn')
+  stopwords.add('doesn')
+  stopwords.add('hasn')
+  stopwords.add('hadn')
+  stopwords.add('wouldn')
+  stopwords.add('ainn')
   stopwords.add('ve')
   stopwords.add('nt')
   stopwords.add('jesu')
@@ -133,6 +165,25 @@ def generate_word_cloud_from_text(text):
   caption_words += " ".join(tokens) + " "
 
   stopwords = enhance_stopwords(set(STOPWORDS))
+
+  wordcloud = WordCloud(width = 800, height = 800,
+                  background_color ='white',
+                  stopwords = stopwords,
+                  min_font_size = 10).generate(caption_words)
+  return wordcloud
+
+def generate_word_cloud_from_french_text(text):
+  """generate word cloud from words in file"""
+#  with open(thisfile,'r',encoding='utf-8') as myinfile:
+#    text = myinfile.read()
+#  print(text)
+#  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
+  tokens = text[0].lower().split()
+
+  caption_words = ""
+  caption_words += " ".join(tokens) + " "
+
+  stopwords = enhance_stopwords_french(set(fr_stop))
 
   wordcloud = WordCloud(width = 800, height = 800,
                   background_color ='white',
