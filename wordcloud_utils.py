@@ -137,12 +137,13 @@ def generate_word_cloud_from_text(text):
                   background_color ='white',
                   stopwords = stopwords,
                   min_font_size = 10).generate(caption_words)
+  return wordcloud
 
-  # plot the WordCloud image
-  plt.figure(figsize = (8, 8), facecolor = None)
-  plt.imshow(wordcloud)
-  plt.axis("off")
-  plt.tight_layout(pad = 0)
-
-  # this is necessary without jupyter
-  plt.show()
+#  # plot the WordCloud image
+#  plt.figure(figsize = (8, 8), facecolor = None)
+#  plt.imshow(wordcloud)
+#  plt.axis("off")
+#  plt.tight_layout(pad = 0)
+#
+#  # this is necessary without jupyter
+#  plt.show()

@@ -14,4 +14,12 @@ FILE = 'rabelais.txt'
 URL = 'https://www.gutenberg.org/cache/epub/289/pg289.txt'
 
 FILE = wordcloud_utils.get_text_from_pg(URL)
-wordcloud_utils.generate_word_cloud_from_text(FILE)
+wordcloud = wordcloud_utils.generate_word_cloud_from_text(FILE)
+# plot the WordCloud image
+plt.figure(figsize = (8, 8), facecolor = None)
+plt.imshow(wordcloud)
+plt.axis("off")
+plt.tight_layout(pad = 0)
+
+# this is necessary without jupyter
+plt.show()
