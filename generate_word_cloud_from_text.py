@@ -23,15 +23,17 @@ def plot_wordcloud(wordcloud):
   # this is necessary without jupyter
   plt.show()
 
+def save_wordcloud(wordcloud):
+  # plot the WordCloud image
+  plt.figure(figsize = (8, 8), facecolor = None)
+  plt.imshow(wordcloud)
+  plt.axis("off")
+  plt.tight_layout(pad = 0)
+  plt.savefig('cache/myimage.png')
+#  # this is necessary without jupyter
+#  plt.show()
 
 text = wordcloud_utils.get_text_from_pg(URL)
 wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
-plot_wordcloud(wordcloud)
-# plot the WordCloud image
-#plt.figure(figsize = (8, 8), facecolor = None)
-#plt.imshow(wordcloud)
-#plt.axis("off")
-#plt.tight_layout(pad = 0)
-#
-## this is necessary without jupyter
-#plt.show()
+#plot_wordcloud(wordcloud)
+save_wordcloud(wordcloud)
