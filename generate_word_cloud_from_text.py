@@ -11,15 +11,27 @@ import wordcloud_utils
 #FILE = 'fannyhill.txt'
 FILE = 'mobydick.txt'
 FILE = 'rabelais.txt'
-URL = 'https://www.gutenberg.org/cache/epub/289/pg289.txt'
+URL = 'https://www.gutenberg.org/cache/epub/541/pg541.txt'
 
-FILE = wordcloud_utils.get_text_from_pg(URL)
-wordcloud = wordcloud_utils.generate_word_cloud_from_text(FILE)
+def plot_wordcloud(wordcloud):
+  # plot the WordCloud image
+  plt.figure(figsize = (8, 8), facecolor = None)
+  plt.imshow(wordcloud)
+  plt.axis("off")
+  plt.tight_layout(pad = 0)
+
+  # this is necessary without jupyter
+  plt.show()
+
+
+text = wordcloud_utils.get_text_from_pg(URL)
+wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
+plot_wordcloud(wordcloud)
 # plot the WordCloud image
-plt.figure(figsize = (8, 8), facecolor = None)
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.tight_layout(pad = 0)
-
-# this is necessary without jupyter
-plt.show()
+#plt.figure(figsize = (8, 8), facecolor = None)
+#plt.imshow(wordcloud)
+#plt.axis("off")
+#plt.tight_layout(pad = 0)
+#
+## this is necessary without jupyter
+#plt.show()

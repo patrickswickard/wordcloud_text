@@ -14,7 +14,8 @@ URL = 'https://www.gutenberg.org/cache/epub/289/pg289.txt'
 
 def get_text_from_pg(url):
   """Get text from project gutenberg"""
-  result = requests.get(url).text
+  rawtext = requests.get(url).text
+  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",rawtext,re.DOTALL)
   return result
 
 def enhance_stopwords_french(stopwords):
@@ -125,8 +126,8 @@ def generate_word_cloud_from_text(text):
 #  with open(thisfile,'r',encoding='utf-8') as myinfile:
 #    text = myinfile.read()
 #  print(text)
-  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
-  tokens = result[0].lower().split()
+#  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
+  tokens = text[0].lower().split()
 
   caption_words = ""
   caption_words += " ".join(tokens) + " "
