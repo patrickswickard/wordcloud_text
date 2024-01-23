@@ -142,6 +142,9 @@ def enhance_stopwords(stopwords):
   stopwords.add('x')
   stopwords.add('y')
   stopwords.add('z')
+  stopwords.add('mr')
+  stopwords.add('didn')
+  stopwords.add('don')
   stopwords.add('isn')
   stopwords.add('doesn')
   stopwords.add('hasn')
@@ -150,6 +153,7 @@ def enhance_stopwords(stopwords):
   stopwords.add('ainn')
   stopwords.add('ve')
   stopwords.add('nt')
+  stopwords.add('er')
   stopwords.add('jesu')
   return stopwords
 
