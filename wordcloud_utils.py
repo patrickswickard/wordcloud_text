@@ -155,6 +155,8 @@ def enhance_stopwords(stopwords):
   stopwords.add('nt')
   stopwords.add('er')
   stopwords.add('jesu')
+  stopwords.add('chapter')
+  stopwords.add('book')
   return stopwords
 
 def generate_word_cloud_from_text(text):
