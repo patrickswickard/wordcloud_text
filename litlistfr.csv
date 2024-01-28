@@ -36,9 +36,7 @@ Cyrano de Bergerac,Edmond Rostand,https://www.gutenberg.org/cache/epub/1256/pg12
 Thérèse Raquin,Émile Zola,https://www.gutenberg.org/cache/epub/7461/pg7461.txt,,35,35
 Le neveu de Rameau,Denis Diderot,https://www.gutenberg.org/cache/epub/13862/pg13862.txt,,36,36
 Manon Lescaut,Abbé Prévost,https://www.gutenberg.org/cache/epub/17983/pg17983.txt,,37,37
-Œuvres complètes,François Villon,https://www.gutenberg.org/cache/epub/12246/pg12246.txt,english crap,38,38
 Fables de La Fontaine,Jean de La Fontaine,https://www.gutenberg.org/cache/epub/56327/pg56327.txt,,39,39
-A Selection from the Comedies of Marivaux,Pierre Carlet de Chamblain de Marivaux,https://www.gutenberg.org/cache/epub/12504/pg12504.txt,,40,40
 Alcools,Guillaume Apollinaire,https://www.gutenberg.org/cache/epub/15462/pg15462.txt,,41,41
 Thaïs,Anatole France,https://www.gutenberg.org/cache/epub/6377/pg6377.txt,,42,42
 Locus Solus,Raymond Roussel,https://www.gutenberg.org/cache/epub/19149/pg19149.txt,,43,43
@@ -120,10 +118,8 @@ La maison de Claudine,Colette,https://www.gutenberg.org/cache/epub/13703/pg13703
 Sido; suivi de Les vrilles de la vigne,Colette,https://www.gutenberg.org/cache/epub/71251/pg71251.txt,,,
 La fille Elisa,Edmond de Goncourt,https://www.gutenberg.org/cache/epub/30317/pg30317.txt,,,
 Germinie Lacerteux,Edmond de Goncourt and Jules de Goncourt,https://www.gutenberg.org/cache/epub/17285/pg17285.txt,,,
-Mirèio,Frédéric Mistral,https://www.gutenberg.org/cache/epub/56008/pg56008.txt,,,
 Le livre des enfants,Marceline Desbordes-Valmore,https://www.gutenberg.org/cache/epub/68327/pg68327.txt,,,
 Poésies complètes,Arthur Rimbaud,https://www.gutenberg.org/cache/epub/29302/pg29302.txt,,,
-Madame Aubin,Paul Verlaine,https://www.gutenberg.org/cache/epub/4661/pg4661.txt,,,
 Poésies religieuses,Paul Verlaine,https://www.gutenberg.org/cache/epub/61039/pg61039.txt,,,
 Hombres (Hommes),Paul Verlaine,https://www.gutenberg.org/cache/epub/20568/pg20568.txt,,,
 Œuvres complètes - Volume 1,Paul Verlaine,https://www.gutenberg.org/cache/epub/15112/pg15112.txt,,,
@@ -137,7 +133,6 @@ Variété I,Paul Valéry,https://www.gutenberg.org/cache/epub/65224/pg65224.txt,
 Charmes,Paul Valéry,https://www.gutenberg.org/cache/epub/71062/pg71062.txt,,,
 Clair de terre,André Breton,https://www.gutenberg.org/cache/epub/60417/pg60417.txt,,,
 La Muette de Portici: Opéra en cinq actes,"Auber, Delavigne, and Scribe",https://www.gutenberg.org/cache/epub/9892/pg9892.txt,,,
-Esther,Jean Racine,https://www.gutenberg.org/cache/epub/15790/pg15790.txt,,,
 Mithridate,Jean Racine,https://www.gutenberg.org/cache/epub/27625/pg27625.txt,,,
 L'occasion perdue recouverte,Pierre Corneille,https://www.gutenberg.org/cache/epub/63174/pg63174.txt,,,
 Portraits et souvenirs,Camille Saint-Saëns,https://www.gutenberg.org/cache/epub/32963/pg32963.txt,,,
@@ -154,3 +149,8 @@ Thomas l'imposteur,Jean Cocteau,https://www.gutenberg.org/cache/epub/59889/pg598
 Le Grand Écart,Jean Cocteau,https://www.gutenberg.org/cache/epub/60079/pg60079.txt,,,
 Plain-chant,Jean Cocteau,https://www.gutenberg.org/cache/epub/59905/pg59905.txt,,,
 La Danse de Sophocle: Poèmes,Jean Cocteau,https://www.gutenberg.org/cache/epub/60863/pg60863.txt,,,
+Mirèio,Frédéric Mistral,https://www.gutenberg.org/cache/epub/56008/pg56008.txt,eng,,
+Madame Aubin,Paul Verlaine,https://www.gutenberg.org/cache/epub/4661/pg4661.txt,eng,,
+Esther,Jean Racine,https://www.gutenberg.org/cache/epub/15790/pg15790.txt,eng,,
+Œuvres complètes de François Villon,François Villon,https://www.gutenberg.org/cache/epub/12246/pg12246.txt,ok,,
+A Selection from the Comedies of Marivaux,Pierre Carlet de Chamblain de Marivaux,https://www.gutenberg.org/cache/epub/12504/pg12504.txt,eng,40,40
