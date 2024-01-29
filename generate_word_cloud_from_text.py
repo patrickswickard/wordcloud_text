@@ -45,11 +45,11 @@ def get_all_litlist():
     wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
     save_wordcloud(wordcloud,index)
 
-#URL = 'https://www.gutenberg.org/cache/epub/22741/pg22741.txt'
-#text = wordcloud_utils.get_text_from_pg(URL)
-##wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
+URL = 'https://www.gutenberg.org/cache/epub/940/pg940.txt'
+text = wordcloud_utils.get_text_from_pg(URL)
+wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
 #wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
-#plot_wordcloud(wordcloud)
+plot_wordcloud(wordcloud)
 ##save_wordcloud(wordcloud,1)
 
-get_all_litlist()
+#get_all_litlist()
