@@ -59,12 +59,13 @@ def get_all_litlistfr():
   print(df)
 
   for index,row in df.iterrows():
-    title = row['title']
-    author = row['author']
-    url = row['url']
-    text = wordcloud_utils.get_text_from_pg(url)
-    wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
-    save_wordcloudfr(wordcloud,index)
+    if index >= 118:
+      title = row['title']
+      author = row['author']
+      url = row['url']
+      text = wordcloud_utils.get_text_from_pg(url)
+      wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
+      save_wordcloudfr(wordcloud,index)
 
 URL = 'https://www.gutenberg.org/cache/epub/22741/pg22741.txt' # brill-sav
 URL = 'https://www.gutenberg.org/cache/epub/56708/pg56708.txt' # rimbaud
@@ -75,9 +76,9 @@ URL = 'https://www.gutenberg.org/cache/epub/64427/pg64427.txt' # proust 1
 URL = 'https://www.gutenberg.org/cache/epub/5097/pg5097.txt'   # verne
 URL = 'https://www.gutenberg.org/cache/epub/1256/pg1256.txt'   # cyrano
 URL = 'https://www.gutenberg.org/cache/epub/16884/pg16884.txt'   # jarry
-URL = 'https://www.gutenberg.org/cache/epub/44098/pg44098.txt'   # other
-text = wordcloud_utils.get_text_from_pg(URL)
-#wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
+URL = 'https://www.gutenberg.org/cache/epub/42586/pg42586.txt'   # other
+#text = wordcloud_utils.get_text_from_pg(URL)
+##wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
 #wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
 #plot_wordcloud(wordcloud)
 #save_wordcloud(wordcloud,1)
