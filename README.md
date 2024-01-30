@@ -8,3 +8,5 @@ works from command line
 
 jupyter notebook generate_wordcloud_live.ipynb
 launches in Jupyter for a more interactive experience, noobs.
+
+may need to pip install pyqt5 for plots to show outside jupyter
