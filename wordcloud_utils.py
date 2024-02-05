@@ -19,6 +19,11 @@ def get_text_from_pg(url):
   result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",rawtext,re.DOTALL)
   return result
 
+def get_text_from_url(url):
+  """Get text from project gutenberg"""
+  rawtext = requests.get(url).text
+  return rawtext
+
 def enhance_stopwords_french(stopwords):
   """enhance french stopwords"""
   stopwords.add('ii')
@@ -236,7 +241,8 @@ def enhance_stopwords(stopwords):
   stopwords.add('hasn')
   stopwords.add('hadn')
   stopwords.add('wouldn')
-  stopwords.add('ainn')
+  stopwords.add('couldn')
+  stopwords.add('ain')
   stopwords.add('ve')
   stopwords.add('nt')
   stopwords.add('er')
@@ -268,7 +274,7 @@ def generate_word_cloud_from_text(text):
 
   stopwords = enhance_stopwords(set(STOPWORDS))
 
-  wordcloud = WordCloud(width = 800, height = 800,
+  wordcloud = WordCloud(width = 800, height = 1100,
                   background_color ='white',
                   stopwords = stopwords,
                   min_font_size = 10).generate(caption_words)
@@ -287,7 +293,7 @@ def generate_word_cloud_from_french_text(text):
 
   stopwords = enhance_stopwords_french(set(fr_stop))
 
-  wordcloud = WordCloud(width = 800, height = 800,
+  wordcloud = WordCloud(width = 800, height = 1100,
                   background_color ='white',
                   stopwords = stopwords,
                   min_font_size = 10).generate(caption_words)
