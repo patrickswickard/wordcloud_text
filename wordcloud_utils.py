@@ -15,14 +15,20 @@ URL = 'https://www.gutenberg.org/cache/epub/289/pg289.txt'
 
 def get_text_from_pg(url):
   """Get text from project gutenberg"""
-  rawtext = requests.get(url).text
+  headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0'}
+  rawtext = requests.get(url,headers=headers).text
   result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",rawtext,re.DOTALL)[0]
   return result
 
 def get_text_from_url(url):
   """Get text from project gutenberg"""
-  rawtext = requests.get(url).text
+  headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0'}
+  rawtext = requests.get(url,headers=headers).text
   return rawtext
+
+def strip_tags(text):
+  modtext = re.sub("<[^>]*>"," ",text)
+  return modtext
 
 def enhance_stopwords_french(stopwords):
   """enhance french stopwords"""
