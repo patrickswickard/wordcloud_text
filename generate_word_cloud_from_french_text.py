@@ -76,11 +76,11 @@ URL = 'https://www.gutenberg.org/cache/epub/64427/pg64427.txt' # proust 1
 URL = 'https://www.gutenberg.org/cache/epub/5097/pg5097.txt'   # verne
 URL = 'https://www.gutenberg.org/cache/epub/1256/pg1256.txt'   # cyrano
 URL = 'https://www.gutenberg.org/cache/epub/16884/pg16884.txt'   # jarry
-URL = 'https://www.gutenberg.org/cache/epub/42586/pg42586.txt'   # other
-#text = wordcloud_utils.get_text_from_pg(URL)
-##wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
-#wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
-#plot_wordcloud(wordcloud)
-#save_wordcloud(wordcloud,1)
+URL = 'https://www.gutenberg.org/cache/epub/12005/pg12005.txt'   # other
+text = wordcloud_utils.get_text_from_pg(URL)
+#wordcloud = wordcloud_utils.generate_word_cloud_from_text(text)
+wordcloud = wordcloud_utils.generate_word_cloud_from_french_text(text)
+plot_wordcloud(wordcloud)
+save_wordcloud(wordcloud,1)
 
-get_all_litlistfr()
+#get_all_litlistfr()

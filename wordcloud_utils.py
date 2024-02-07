@@ -16,7 +16,7 @@ URL = 'https://www.gutenberg.org/cache/epub/289/pg289.txt'
 def get_text_from_pg(url):
   """Get text from project gutenberg"""
   rawtext = requests.get(url).text
-  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",rawtext,re.DOTALL)
+  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",rawtext,re.DOTALL)[0]
   return result
 
 def get_text_from_url(url):
@@ -267,7 +267,7 @@ def generate_word_cloud_from_text(text):
 #    text = myinfile.read()
 #  print(text)
 #  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
-  tokens = text[0].lower().split()
+  tokens = text.lower().split()
 
   caption_words = ""
   caption_words += " ".join(tokens) + " "
@@ -286,7 +286,7 @@ def generate_word_cloud_from_french_text(text):
 #    text = myinfile.read()
 #  print(text)
 #  result = re.findall(r"\*\*\*\s+START\s+OF\s+THE\s+PROJECT\s+GUTENBERG.*?\*\*\*(.*?)\*\*\*\s+END\s+OF\s+THE\s+PROJECT\s+GUTENBERG",text,re.DOTALL)
-  tokens = text[0].lower().split()
+  tokens = text.lower().split()
 
   caption_words = ""
   caption_words += " ".join(tokens) + " "
