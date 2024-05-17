@@ -21,7 +21,7 @@ def get_text_from_pg(url):
   return result
 
 def get_text_from_url(url):
-  """Get text from project gutenberg"""
+  """Get text from generic url"""
   headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0'}
   rawtext = requests.get(url,headers=headers).text
   return rawtext
@@ -299,7 +299,7 @@ def generate_word_cloud_from_french_text(text):
 
   stopwords = enhance_stopwords_french(set(fr_stop))
 
-  wordcloud = WordCloud(width = 800, height = 1100,
+  wordcloud = WordCloud(width = 1500, height = 2000,
                   background_color ='white',
                   stopwords = stopwords,
                   min_font_size = 10).generate(caption_words)
